@@ -6,7 +6,8 @@ document.querySelectorAll(".audio-message").forEach(player => {
 
     function createBars() {
         waveform.innerHTML = "";
-        const heights = [36, 34, 24, 16, 34, 30, 36, 28, 20, 14, 20, 36, 34, 24, 26, 34, 30, 36, 28, 20, 30, 20, 12, 20, 28, 36, 30, 36, 26, 24, 34, 36, 34, 30, 36];
+        const numBars = Math.floor(waveform.clientWidth / 10); // Количество полосок на основе ширины
+        const heights = Array.from({ length: numBars }, () => Math.floor(Math.random() * 30) + 10);
         heights.forEach(height => {
             let bar = document.createElement("div");
             bar.classList.add("bar");
@@ -14,7 +15,6 @@ document.querySelectorAll(".audio-message").forEach(player => {
             waveform.appendChild(bar);
         });
     }
-    createBars();
 
     function updateWaveform() {
         let bars = waveform.querySelectorAll(".bar");
@@ -38,8 +38,8 @@ document.querySelectorAll(".audio-message").forEach(player => {
         }
     }
 
+    createBars();
+    window.addEventListener("resize", createBars);
     audio.addEventListener("timeupdate", updateWaveform);
     playButton.addEventListener("click", toggleAudio);
 });
-
-
