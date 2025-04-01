@@ -30,16 +30,24 @@ function swiperOn() {
 
         swiperinit = true;
     } else if (window.innerWidth > 767 && swiperinit) {
-        // Уничтожаем Swiper, если он уже был создан
-        mobileswiper.destroy(true, true);
+        // Уничтожаем Swiper, если он был создан
+        if (mobileswiper) {
+            mobileswiper.destroy(true, true);
+        }
         swiperinit = false;
 
-        // Убираем обертку swiper-wrapper и пагинацию
-        $('.mslider .swiper-wrapper').contents().unwrap();
+        // Корректно убираем обертку swiper-wrapper и пагинацию
+        $('.mslider .swiper-wrapper').replaceWith($('.mslider .swiper-wrapper').html());
         $('.mslider .swiper-pagination').remove();
     }
 }
 
-// Запускаем функцию при загрузке страницы и изменении размера окна
+// Запускаем функцию при загрузке страницы
 swiperOn();
-$(window).resize(swiperOn);
+
+// Оптимизированный обработчик resize
+let resizeTimer;
+$(window).resize(() => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(swiperOn, 200);
+});
