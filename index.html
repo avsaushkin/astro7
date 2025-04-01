@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Aura7 - Консультации с тарологом">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js" defer></script>
+    <script src="jquery.js"></script>
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <title>Aura7 - Консультации с тарологом</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class ="hero-main">
+                    <div class="hero-logo">
+                        <img src="img/logo1.svg" alt="aura7" style="width: 128px; height: 27px;">
+                        <p class="subtitle">Сервис эзотерических консультаций № 1 в России с 2009 г.</p>
+                    </div>
+                    <div class="hero-text">
+                        <h1>Консультации с тарологом по телефону или в чате</h1>
+                        <p class="description">Получите прогноз по вашей ситуации бесплатно</p>
+                        <a href="#" class="btn">Попробовать бесплатно</a>
+                    </div>
+                </div>
+                <img src="img/phone-mockup-x1.png" srcset="img/phone-mockup-x2.png 2x" alt="Вера Кант - звонок">
+            </div>
+        </div>
+    </header>
+    
+    <section class="about">
+        <div class="container">
+            <h2>О нас</h2>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-num">1800</span>
+                    <span class="stat-text">Консуль&shy;таций в день</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">2 млн</span>
+                    <span class="stat-text">Клиентов на сервисе</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">200</span>
+                    <span class="stat-text">Экспертов</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-text">Конфиденциальность</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="first_consult">
+        <div class="container">
+            <h2>Как проходит первая консультация</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="img/ico1.svg" alt="Выберите эксперта">
+                    <div class="wrapper">
+                        <span class="step-title">Выберите эксперта</span>
+                        <span class="step-text">С&nbsp;помощью фильтров или доверьтесь интуиции</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <img src="img/ico2.svg" alt="Забронируйте консультацию">
+                    <div class="wrapper">
+                        <span class="step-title">Забронируйте консультацию</span>
+                        <span class="step-text">Длительность первой&nbsp;&mdash; до&nbsp;7&nbsp;минут</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <img src="img/ico3.svg" alt="Дождитесь звонка">
+                    <div class="wrapper">
+                        <span class="step-title">Дождитесь звонка</span>
+                        <span class="step-text">Эксперт позвонит в&nbsp;течение 2х&nbsp;минут</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="consultations">
+        <div class="container">
+            <h2>С чем к нам обращаются</h2>
+            <div class="consultation-cards mslider">
+                <div class="consultation-card mslide">
+                    <div class="client-info">
+                        <div class="client-photo">
+                            <img src="img/client1.png" srcset="img/client1-x2.png 2x" width="54" height="54" alt="Фото Олеси">
+                            <p><strong>Олеся</strong><br> 38 лет</p>
+                        </div>
+                        <p>&laquo;Ребенок в&nbsp;этом году заканчивает 9&nbsp;класс и&nbsp;ужасно переживает из-за ОГЭ. Особенно сложно дается математика. Мы&nbsp;конечно волнуемся и&nbsp;стараемся поддержать. Вопрос: сдаст&nbsp;ли сын экзамены?&raquo;</p>
+                    </div>
+                    <div class="expert-response">
+                        <p><b>Ответ эксперта</b></p>
+                        <div class="expert-photo">
+                            <img src="img/expert1.png" srcset="img/expert1-x2.png 2x" width="54" height="54" alt="Фото Лоры Нейман">
+                            <p><strong>Лора Нейман</strong><br>Таролог, рунолог. Успешно практикует 5 лет</p>
+                        </div>
+                        <div class="audio-message">
+                            <div class="play-button" onclick="toggleAudio()"></div>
+                            <div class="waveform" id="waveform"></div>
+                            <div class="time" id="time">00:21</div>
+                            <audio id="audio" src="audio.mp3" ontimeupdate="updateWaveform()"></audio>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="consultation-card mslide">
+                    <div class="client-info">
+                        <div class="client-photo">
+                            <img src="img/client2.png" srcset="img/client2-x2.png 2x" width="54" height="54" alt="Фото Виктории">
+                            <p><strong>Виктория</strong><br> 32 года</p>
+                        </div>
+                        <p>&laquo;Есть&nbsp;ли перспективы на&nbsp;текущем месте работы, возможен&nbsp;ли рост? Кажется, что никуда не&nbsp;двигаюсь и&nbsp;не&nbsp;развиваюсь. Стоит&nbsp;ли искать новое место работы?&raquo;</p>
+                    </div>
+                    <div class="expert-response">
+                        <p><b>Ответ эксперта</b></p>
+                        <div class="expert-photo">
+                            <img src="img/expert2.png" srcset="img/expert2-x2.png 2x" width="54" height="54" alt="Фото Яны Колесниковой">
+                            <p><strong>Яна Колесникова</strong><br>Таролог, нумеролог. Опыт работы&nbsp;&mdash; 15&nbsp;лет</p>
+                        </div>
+                        <div class="audio-message">
+                            <div class="play-button" onclick="toggleAudio()"></div>
+                            <div class="waveform" id="waveform"></div>
+                            <div class="time" id="time">00:21</div>
+                            <audio id="audio" src="audio.mp3" ontimeupdate="updateWaveform()"></audio>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="consultation-card mslide">
+                    <div class="client-info">
+                        <div class="client-photo">
+                            <img src="img/client3.png" srcset="img/client3-x2.png 2x" width="54" height="54" alt="Фото Николая">
+                            <p><strong>Николай</strong><br> 35 лет</p>
+                        </div>
+                        <p>&laquo;Ольга 35&nbsp;лет и&nbsp;Николай 32&nbsp;года. Расстались больше полугода назад. До&nbsp;сих пор не&nbsp;могу отпустить ситуацию. Вернется&nbsp;ли он? Есть&nbsp;ли перспектива восстановления отношений?&raquo;</p>
+                    </div>
+                    <div class="expert-response">
+                        <p><b>Ответ эксперта</b></p>
+                        <div class="expert-photo">
+                            <img src="img/expert3.png" srcset="img/expert3-x2.png 2x" width="54" height="54" alt="Фото Аглаи Фидес">
+                            <p><strong>Аглая Фидес</strong><br>Таролог, успешно практикует более 17&nbsp;лет</p>
+                        </div>
+                        <div class="audio-message">
+                            <div class="play-button" onclick="toggleAudio()"></div>
+                            <div class="waveform" id="waveform"></div>
+                            <div class="time" id="time">00:21</div>
+                            <audio id="audio" src="audio.mp3" ontimeupdate="updateWaveform()"></audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Мы понимаем, что у каждого человека есть наиболее важная проблема. Вы всегда можете обсудить ее с тарологом.</p>
+                <a href="#" class="btn red">Попробовать бесплатно</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="expert-sreps">
+        <div class="container">
+            <h2>Эксперты проходят строгий отбор</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="img/ico4.svg" alt="Выберите эксперта">
+                    <div class="wrapper">
+                        <span class="step-title">Тестирование</span>
+                        <span class="step-text">Обязательное требование&nbsp;&mdash; практический опыт не&nbsp;менее 5&nbsp;лет. Профессиональные способности проверяют независимые добровольцы</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <img src="img/ico5.svg" alt="Забронируйте консультацию">
+                    <div class="wrapper">
+                        <span class="step-title">Собеседование</span>
+                        <span class="step-text">На&nbsp;собеседовании отслеживаем коммуникативные способности, уровень эмпатии, манеру и&nbsp;стиль беседы.</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <img src="img/ico6.svg" alt="Дождитесь звонка">
+                    <div class="wrapper">
+                        <span class="step-title">Испытательный период</span>
+                        <span class="step-text">Только&nbsp;10% специалистов проходят отбор. В&nbsp;течение 3‍-‍х месяцев мы&nbsp;оцениваем навыки и&nbsp;собираем отзывы от&nbsp;клиентов.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
