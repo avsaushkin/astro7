@@ -315,10 +315,11 @@ h2 {
     display: flex;
     align-items: center;
     background: #ffffff;
-    border-radius: 10px;    
+    border-radius: 10px;
     padding: 14px 16px;
     width: 100%;
 }
+
 .play-button {
     width: 36px;
     height: 36px;
@@ -328,15 +329,13 @@ h2 {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    position: relative;
 }
-.play-button::before {
-    content: '\25B6'; /* ▶ */
-    color: white;
-    font-size: 16px;
-    display: block;
-    text-align: center;
+
+.play-button svg {
+    width: 18px;
+    height: 18px;
 }
+
 .waveform {
     flex-grow: 1;
     display: flex;
@@ -346,16 +345,19 @@ h2 {
     overflow: hidden;
     height: 36px;
 }
+
 .bar {
     width: 2px;
     background: #CDCDCF;
     border-radius: 100px;
-    transition: height 0.1s linear;
+    transition: opacity 0.1s linear;
 }
+
 .time {
     font-size: 13px;
     color: #A8ADB4;
 }
+
 
 .footer {
     padding: 32px 0;
