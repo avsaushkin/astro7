@@ -328,11 +328,14 @@ h2 {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    position: relative;
 }
 .play-button::before {
-    content: '\25B6';
+    content: '\25B6'; /* ▶ */
     color: white;
     font-size: 16px;
+    display: block;
+    text-align: center;
 }
 .waveform {
     flex-grow: 1;
