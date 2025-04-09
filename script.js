@@ -1,66 +1,82 @@
 // Звуковые сообщения
+// Звуковые сообщения
 $(document).ready(function() {
-    $(".audio-message").each(function() {
-        const $player = $(this);
-        const $audio = $player.find("audio");
-        const $waveform = $player.find(".waveform");
-        const $timeDisplay = $player.find(".time");
-        const $playButton = $player.find(".play-button");
-        const $playIcon = $playButton.find(".play-icon");
-        const $pauseIcon = $playButton.find(".pause-icon");
+  let currentlyPlayingAudio = null; // Переменная для хранения текущего воспроизводимого аудио
 
-        // Создание волн
-        function createBars() {
-            $waveform.empty();
-            const heights = [36, 34, 24, 16, 34, 30, 36, 28, 20, 14, 20, 36, 34, 24, 26, 34, 30, 36, 28, 20, 30, 20, 12, 20, 28, 36, 30, 36, 26, 24, 34, 36, 34, 30];
-            
-            $.each(heights, function(index, height) {
-                $('<div>').addClass('bar')
-                          .css('height', height + 'px')
-                          .appendTo($waveform);
-            });
-        }
-        createBars();
+  $(".audio-message").each(function() {
+      const $player = $(this);
+      const $audio = $player.find("audio")[0]; // Получаем DOM-элемент audio
+      const $waveform = $player.find(".waveform");
+      const $timeDisplay = $player.find(".time");
+      const $playButton = $player.find(".play-button");
+      const $playIcon = $playButton.find(".play-icon");
+      const $pauseIcon = $playButton.find(".pause-icon");
 
-        // Обновление анимации волн и времени
-        function updateWaveform() {
-            const $bars = $waveform.find(".bar");
-            const progress = $audio[0].currentTime / $audio[0].duration;
-            const activeBars = Math.floor($bars.length * progress);
-            
-            $bars.each(function(index) {
-                $(this).css('opacity', index < activeBars ? '1' : '0.3');
-            });
+      // Создание волн
+      function createBars() {
+          $waveform.empty();
+          const heights = [36, 34, 24, 16, 34, 30, 36, 28, 20, 14, 20, 36, 34, 24, 26, 34, 30, 36, 28, 20, 30, 20, 12, 20, 28, 36, 30, 36, 26, 24, 34, 36, 34, 30];
+          
+          $.each(heights, function(index, height) {
+              $('<div>').addClass('bar')
+                        .css('height', height + 'px')
+                        .appendTo($waveform);
+          });
+      }
+      createBars();
 
-            const minutes = Math.floor($audio[0].currentTime / 60);
-            let seconds = Math.floor($audio[0].currentTime % 60);
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-            $timeDisplay.text(minutes + ':' + seconds);
-        }
+      // Обновление анимации волн и времени
+      function updateWaveform() {
+          const $bars = $waveform.find(".bar");
+          const progress = $audio.currentTime / $audio.duration;
+          const activeBars = Math.floor($bars.length * progress);
+          
+          $bars.each(function(index) {
+              $(this).css('opacity', index < activeBars ? '1' : '0.3');
+          });
 
-        // Воспроизведение / Пауза
-        function toggleAudio() {
-            if ($audio[0].paused) {
-                $audio[0].play();
-                $playIcon.hide();
-                $pauseIcon.show();
-            } else {
-                $audio[0].pause();
-                $playIcon.show();
-                $pauseIcon.hide();
-            }
-        }
+          const minutes = Math.floor($audio.currentTime / 60);
+          let seconds = Math.floor($audio.currentTime % 60);
+          seconds = seconds < 10 ? '0' + seconds : seconds;
+          $timeDisplay.text(minutes + ':' + seconds);
+      }
 
-        // Событие завершения аудио
-        $audio.on("ended", function() {
-            $playIcon.show();
-            $pauseIcon.hide();
-        });
+      // Воспроизведение / Пауза
+      function toggleAudio() {
+          // Если есть другое воспроизводимое аудио, останавливаем его
+          if (currentlyPlayingAudio && currentlyPlayingAudio !== $audio) {
+              currentlyPlayingAudio.pause();
+              currentlyPlayingAudio.currentTime = 0;
+              // Находим соответствующие элементы для предыдущего аудио и обновляем их
+              const prevPlayer = $(currentlyPlayingAudio).closest('.audio-message');
+              prevPlayer.find('.play-icon').show();
+              prevPlayer.find('.pause-icon').hide();
+          }
 
-        // Назначение событий
-        $audio.on("timeupdate", updateWaveform);
-        $playButton.on("click", toggleAudio);
-    });
+          if ($audio.paused) {
+              $audio.play();
+              currentlyPlayingAudio = $audio;
+              $playIcon.hide();
+              $pauseIcon.show();
+          } else {
+              $audio.pause();
+              currentlyPlayingAudio = null;
+              $playIcon.show();
+              $pauseIcon.hide();
+          }
+      }
+
+      // Событие завершения аудио
+      $audio.addEventListener("ended", function() {
+          currentlyPlayingAudio = null;
+          $playIcon.show();
+          $pauseIcon.hide();
+      });
+
+      // Назначение событий
+      $audio.addEventListener("timeupdate", updateWaveform);
+      $playButton.on("click", toggleAudio);
+  });
 
     $('.consultation-cards').slick({
         dots: true,
