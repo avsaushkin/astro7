@@ -34,7 +34,7 @@ html, body {
 .container {
     width: 100%;
     max-width: 990px;
-    margin: 48px auto 0;
+    margin: 48px auto;
     padding: 0 15px;
 }
 
@@ -45,6 +45,18 @@ html, body {
     justify-content: center;
     text-align: center;
     background: #131314 url('img/bg-main.png') center top / cover no-repeat;
+    width: 100%;
+    color: #fff;
+    font-size: 17px;  
+}
+
+.hero-dark {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: left;
+    background: #131314 url('img/bg-dark.jpg') center top / cover no-repeat;
     width: 100%;
     color: #fff;
     font-size: 17px;  
@@ -212,6 +224,11 @@ h2 {
     gap: 20px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    padding-bottom: 72px;
+    width: 100%;
+    overflow: hidden;
+    
 }
 
 .consultation-card {
@@ -224,42 +241,90 @@ h2 {
     scroll-snap-align: start;
 }
 
-
-.mslider {
-    overflow: visible; /* Скрываем полосу прокрутки */
-    position: relative; /* Обязательно для работы swiper-pagination */
-    padding-bottom: 32px; /* Добавляем место под пагинацию */
+.slick-list {
+    padding: 0 !important;
 }
 
-.swiper-pagination {
+.slick-slide {
+    margin: 0 10px; /* 10px с каждой стороны = 20px между слайдами */
+  }
+  
+  .slick-list {
+    margin: 0 -10px; /* Компенсируем внешние отступы */
+  }
+
+.slick-dots {
+    position: absolute;
+    bottom: 20px; /* Отступ снизу */
+    left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Запрещаем перенос на новую строку */
+    width: auto;
+    white-space: nowrap;
 }
 
-.mslider .swiper-pagination {
-    bottom: -18px;
-    left: 50%
-}
+.slick-dots li {
+    margin: 0 5px; /* Расстояние между точками */
+    flex-shrink: 0; /* Запрещаем сжатие */
+  }
 
-.swiper-pagination-bullet {
+  .slick-dots li button {
+    text-indent: -9999px; /* Дополнительное скрытие текста */
+
+  }
+
+  .slick-dots button {
     width: 8px;
     height: 8px;
-    background: gray;
     margin: 0 5px;
     border-radius: 50%;
     transition: all 0.3s ease;
+    border: none;
 }
 
-.swiper-pagination-bullet-active {
+.slick-active button {
     background: #E23065;
     opacity: 1;
     width: 32px;
     border-radius: 10px;
 }
 
+.tarot-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    gap: 20px;
+    overflow: hidden;
+    padding-bottom: 72px;
+    width: 100%;
+    overflow: hidden;    
+}
 
+.tarot-card {
+    width: 305px;
+    height: 500px;
+    border-radius: 20px;
+    border: 1px solid #CED1D5;
+    font-size: 15px;
+    white-space: normal;
+    scroll-snap-align: start;
+}
 
+.hero-dark .slick-active button {
+    background: #fff;
+}
 
+.slick-arrow {
+    position: absolute;
+}
 
 
 
@@ -368,6 +433,25 @@ h2 {
 }
 
 
+
+
+
+
+
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .container {
@@ -428,11 +512,11 @@ h2 {
         font-size: 13px;
     }
 
-    .consultation-card {
-        min-width: 100%;
-    }
-
     .footer {
         padding-top: 64px;
+    }
+
+    .consultation-card, .tarot-card {
+        min-width: 90vw;
     }
 }

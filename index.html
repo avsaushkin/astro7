@@ -7,8 +7,12 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Slick JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <script src="script.js" defer></script>
-    <script src="jquery.js"></script>
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta property="og:url" content="">
@@ -91,8 +95,8 @@
     <section class="consultations">
         <div class="container">
             <h2>С чем к нам обращаются</h2>
-            <div class="consultation-cards mslider">
-                <div class="consultation-card mslide">
+            <div class="consultation-cards">
+                <div class="consultation-card">
                     <div class="client-info">
                         <div class="client-photo">
                             <img src="img/client1.png" srcset="img/client1-x2.png 2x" width="54" height="54" alt="Фото Олеси">
@@ -123,7 +127,7 @@
                     </div>
                 </div>
                 
-                <div class="consultation-card mslide">
+                <div class="consultation-card">
                     <div class="client-info">
                         <div class="client-photo">
                             <img src="img/client2.png" srcset="img/client2-x2.png 2x" width="54" height="54" alt="Фото Виктории">
@@ -154,7 +158,7 @@
                     </div>
                 </div>
 
-                <div class="consultation-card mslide">
+                <div class="consultation-card">
                     <div class="client-info">
                         <div class="client-photo">
                             <img src="img/client3.png" srcset="img/client3-x2.png 2x" width="54" height="54" alt="Фото Николая">
@@ -216,6 +220,167 @@
                         <span class="step-text">Только&nbsp;10% специалистов проходят отбор. В&nbsp;течение 3‍-‍х месяцев мы&nbsp;оцениваем навыки и&nbsp;собираем отзывы от&nbsp;клиентов.</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-dark">
+        <div class="container">
+            <h2>Наши тарологи</h2>
+            <div class="tarot-cards">
+                <div class="tarot-card">
+                    <div class="tarot-card__content">
+                      <h2 class="tarot-card__name">Вера Кант</h2>
+                      <p class="tarot-card__specialties">Таролог, рунолог, астролог, нумеролог</p>
+                      
+                      <div class="tarot-card__stats">
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">18</span>
+                          <span class="tarot-card__stat-label">лет опыта</span>
+                        </div>
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">5104</span>
+                          <span class="tarot-card__stat-label">консультаций</span>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <div class="tarot-card">
+                    <div class="tarot-card__content">
+                      <h2 class="tarot-card__name">Вера Кант</h2>
+                      <p class="tarot-card__specialties">Таролог, рунолог, астролог, нумеролог</p>
+                      
+                      <div class="tarot-card__stats">
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">18</span>
+                          <span class="tarot-card__stat-label">лет опыта</span>
+                        </div>
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">5104</span>
+                          <span class="tarot-card__stat-label">консультаций</span>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <div class="tarot-card">
+                    <div class="tarot-card__content">
+                      <h2 class="tarot-card__name">Вера Кант</h2>
+                      <p class="tarot-card__specialties">Таролог, рунолог, астролог, нумеролог</p>
+                      
+                      <div class="tarot-card__stats">
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">18</span>
+                          <span class="tarot-card__stat-label">лет опыта</span>
+                        </div>
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">5104</span>
+                          <span class="tarot-card__stat-label">консультаций</span>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <div class="tarot-card">
+                    <div class="tarot-card__content">
+                      <h2 class="tarot-card__name">Вера Кант</h2>
+                      <p class="tarot-card__specialties">Таролог, рунолог, астролог, нумеролог</p>
+                      
+                      <div class="tarot-card__stats">
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">18</span>
+                          <span class="tarot-card__stat-label">лет опыта</span>
+                        </div>
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">5104</span>
+                          <span class="tarot-card__stat-label">консультаций</span>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <div class="tarot-card">
+                    <div class="tarot-card__content">
+                      <h2 class="tarot-card__name">Вера Кант</h2>
+                      <p class="tarot-card__specialties">Таролог, рунолог, астролог, нумеролог</p>
+                      
+                      <div class="tarot-card__stats">
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">18</span>
+                          <span class="tarot-card__stat-label">лет опыта</span>
+                        </div>
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">5104</span>
+                          <span class="tarot-card__stat-label">консультаций</span>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <div class="tarot-card">
+                    <div class="tarot-card__content">
+                      <h2 class="tarot-card__name">Вера Кант</h2>
+                      <p class="tarot-card__specialties">Таролог, рунолог, астролог, нумеролог</p>
+                      
+                      <div class="tarot-card__stats">
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">18</span>
+                          <span class="tarot-card__stat-label">лет опыта</span>
+                        </div>
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">5104</span>
+                          <span class="tarot-card__stat-label">консультаций</span>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <div class="tarot-card">
+                    <div class="tarot-card__content">
+                      <h2 class="tarot-card__name">Вера Кант</h2>
+                      <p class="tarot-card__specialties">Таролог, рунолог, астролог, нумеролог</p>
+                      
+                      <div class="tarot-card__stats">
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">18</span>
+                          <span class="tarot-card__stat-label">лет опыта</span>
+                        </div>
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">5104</span>
+                          <span class="tarot-card__stat-label">консультаций</span>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <div class="tarot-card">
+                    <div class="tarot-card__content">
+                      <h2 class="tarot-card__name">Вера Кант</h2>
+                      <p class="tarot-card__specialties">Таролог, рунолог, астролог, нумеролог</p>
+                      
+                      <div class="tarot-card__stats">
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">18</span>
+                          <span class="tarot-card__stat-label">лет опыта</span>
+                        </div>
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">5104</span>
+                          <span class="tarot-card__stat-label">консультаций</span>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <div class="tarot-card">
+                    <div class="tarot-card__content">
+                      <h2 class="tarot-card__name">Вера Кант</h2>
+                      <p class="tarot-card__specialties">Таролог, рунолог, астролог, нумеролог</p>
+                      
+                      <div class="tarot-card__stats">
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">18</span>
+                          <span class="tarot-card__stat-label">лет опыта</span>
+                        </div>
+                        <div class="tarot-card__stat">
+                          <span class="tarot-card__stat-value">5104</span>
+                          <span class="tarot-card__stat-label">консультаций</span>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
             </div>
         </div>
     </section>
