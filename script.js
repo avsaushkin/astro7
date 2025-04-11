@@ -108,10 +108,10 @@ $(document).ready(function() {
 
       $('.tarot-cards').slick({
         dots: true,
-        infinite: true,
+        infinite: false,
         speed: 300,
         arrows: true,
-        initialSlide: 1,
+        initialSlide: 0, // Начинаем с первого слайда (было 1)
         appendArrows: $('.hero-dark .container'),
         prevArrow: `
           <button class="slick-arrow slick-prev" aria-label="Previous">
@@ -132,17 +132,28 @@ $(document).ready(function() {
         autoplay: false,
         slidesToShow: 3,
         slidesToScroll: 3,
-        centerMode: true,
+        centerMode: false, // Отключаем centerMode (было true)
+        centerPadding: '0', // Убираем отступы по краям
         responsive: [
-          
+          {
+            breakpoint: 1600,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: false,
+              dots: true,
+              centerMode: false // Также отключаем для адаптива
+            }
+          },
           {
             breakpoint: 600,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              infinite: true
+              infinite: false,
+              centerMode: false // И для мобильной версии
             }
-          },
+          }
         ]
       });
 });

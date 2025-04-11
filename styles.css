@@ -33,7 +33,7 @@ html, body {
 
 .container {
     width: 100%;
-    max-width: 990px;
+    max-width: 1000px;
     margin: 48px auto;
     padding: 0 15px;
     position: relative;
