@@ -79,12 +79,11 @@ $(document).ready(function() {
   });
 
     $('.consultation-cards').slick({
-        dots: true,
         infinite: false,
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
         arrows: false,
-        centerMode: true,
+        centerMode: false,
         responsive: [
           {
             breakpoint: 1600,
@@ -109,28 +108,39 @@ $(document).ready(function() {
 
       $('.tarot-cards').slick({
         dots: true,
-        infinite: false,
+        infinite: true,
         speed: 300,
         arrows: true,
+        initialSlide: 1,
+        appendArrows: $('.hero-dark .container'),
+        prevArrow: `
+          <button class="slick-arrow slick-prev" aria-label="Previous">
+            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="45" height="45" rx="22.5" stroke="white"/>
+            <path d="M26 31L18 23L26 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        `,
+        nextArrow: `
+          <button class="slick-arrow slick-next" aria-label="Next">
+            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="-0.5" y="0.5" width="45" height="45" rx="22.5" transform="matrix(-1 0 0 1 45 0)" stroke="white"/>
+            <path d="M20 31L28 23L20 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        `,
         autoplay: false,
         slidesToShow: 3,
         slidesToScroll: 3,
         centerMode: true,
         responsive: [
-          {
-            breakpoint: 1600,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: true
-            }
-          },
+          
           {
             breakpoint: 600,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToScroll: 1,
+              infinite: true
             }
           },
         ]
