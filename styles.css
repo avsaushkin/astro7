@@ -11,6 +11,7 @@
 html, body {
     min-height: 100vh;
     font-family: "Inter", sans-serif;
+    letter-spacing: -0.02em;
     color: #333;
     overflow-x: hidden;
 }
@@ -318,15 +319,24 @@ h2 {
     white-space: normal;
     scroll-snap-align: start;
     padding: 20px 15px;
-    
-    background: 
-        url('img/card-kant.png') center/cover no-repeat,
-        linear-gradient(to bottom, rgba(50, 50, 50, 0.4), rgba(70, 70, 70, 0.4));
+    background: center/cover no-repeat;
     background-blend-mode: soft-light;
-    
-    /* Тени */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);   
+}
+
+.tarot-kant {
+    background-image: 
+        url('img/card-kant.png');
+}
+
+.tarot-veres {
+    background-image: 
+        url('img/card-veres.png');
+}
+
+.tarot-rentova {
+    background-image: 
+        url('img/card-rentova.png');
 }
 
 .tarot-card-content {
@@ -334,7 +344,6 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background;
 }
 
 .tarot-card-line {
@@ -508,12 +517,12 @@ h2 {
 @media 
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
-    .tarot-card {
+    .tarot-kant {
         background: url('img/card-kant-x2.png') center/cover no-repeat;
-        background-blend-mode: normal;
-        
-        /* Лёгкая корректировка теней */
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+    .tarot-veres {
+        background-image: 
+            url('img/card-veres-x2.png') center/cover no-repeat;
     }
 }
 
