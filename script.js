@@ -83,19 +83,11 @@ $(document).ready(function() {
         slidesToShow: 3,
         slidesToScroll: 3,
         arrows: false,
-        centerMode: false,
+        centerMode: true,
         responsive: [
+          
           {
-            breakpoint: 1600,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: false,
-              dots: false
-            }
-          },
-          {
-            breakpoint: 600,
+            breakpoint: 768,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
@@ -109,7 +101,7 @@ $(document).ready(function() {
       $('.tarot-cards').slick({
         dots: true,
         infinite: false,
-        speed: 300,
+        speed: 800,
         arrows: true,
         initialSlide: 0, // Начинаем с первого слайда (было 1)
         appendArrows: $('.hero-dark .container'),
@@ -135,23 +127,15 @@ $(document).ready(function() {
         centerMode: false, // Отключаем centerMode (было true)
         centerPadding: '0', // Убираем отступы по краям
         responsive: [
+          
           {
-            breakpoint: 1600,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: false,
-              dots: true,
-              centerMode: false // Также отключаем для адаптива
-            }
-          },
-          {
-            breakpoint: 600,
+            breakpoint: 768,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
               infinite: false,
-              centerMode: false // И для мобильной версии
+              centerMode: false,
+              arrows: false,
             }
           }
         ]

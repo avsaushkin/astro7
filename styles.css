@@ -311,13 +311,22 @@ h2 {
 
 .tarot-card {
     position: relative;
+    width: 307px;
     height: 500px;
     border-radius: 20px;
     font-size: 15px;
     white-space: normal;
     scroll-snap-align: start;
     padding: 20px 15px;
-    background: url('img/card-kant.png') center top / cover no-repeat;
+    
+    background: 
+        url('img/card-kant.png') center/cover no-repeat,
+        linear-gradient(to bottom, rgba(50, 50, 50, 0.4), rgba(70, 70, 70, 0.4));
+    background-blend-mode: soft-light;
+    
+    /* Тени */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    
 }
 
 .tarot-card-content {
@@ -332,7 +341,8 @@ h2 {
     position: absolute;
     font-size: 13px; 
     top: 20px;
-    left: 15px;
+    left: 20px;
+    color: #0DC100;
 }
 
 .tarot-card-name {
@@ -374,13 +384,6 @@ h2 {
 .slick-disabled {
     opacity: 0.4;
 }
-
-
-
-
-
-
-
 
 .client-info {
     padding: 24px 20px;
@@ -501,8 +504,18 @@ h2 {
 
 
 
-
-
+/* Ретина */
+@media 
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+    .tarot-card {
+        background: url('img/card-kant-x2.png') center/cover no-repeat;
+        background-blend-mode: normal;
+        
+        /* Лёгкая корректировка теней */
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+}
 
 
 
