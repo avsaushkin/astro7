@@ -140,4 +140,37 @@ $(document).ready(function() {
           }
         ]
       });
+
+      $(document).ready(function() {
+        const $gridSlider = $('.advantages');
+        const mobileBreakpoint = 768; // Брейкпойнт для мобильных
+      
+        function initSlider() {
+          if ($(window).width() <= mobileBreakpoint) {
+            // Если слайдер ещё не инициализирован — включаем
+            if (!$gridSlider.hasClass('slick-initialized')) {
+              $gridSlider.slick({
+                dots: true,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+              });
+            }
+          } else {
+            // Если это десктоп и слайдер был — уничтожаем
+            if ($gridSlider.hasClass('slick-initialized')) {
+              $gridSlider.slick('unslick');
+            }
+          }
+        }
+      
+        // Запускаем при загрузке и ресайзе
+        $(window).on('load resize', initSlider);
+      });
+
+
+
+
+
 });
