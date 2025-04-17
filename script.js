@@ -76,7 +76,7 @@ $(document).ready(function() {
       // Назначение событий
       $audio.addEventListener("timeupdate", updateWaveform);
       $playButton.on("click", toggleAudio);
-  });
+  } );
 
     $('.consultation-cards').slick({
         infinite: false,
@@ -104,7 +104,7 @@ $(document).ready(function() {
         speed: 800,
         arrows: true,
         initialSlide: 0, // Начинаем с первого слайда (было 1)
-        appendArrows: $('.hero-dark .container'),
+        appendArrows: $('.hero-dark .tarologyst'),
         prevArrow: `
           <button class="slick-arrow slick-prev" aria-label="Previous">
             <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -168,6 +168,55 @@ $(document).ready(function() {
         // Запускаем при загрузке и ресайзе
         $(window).on('load resize', initSlider);
       });
+
+      $('.story-cards').slick({
+        dots: true,
+        infinite: false,
+        speed: 800,
+        arrows: true,
+        centerMode: true,
+        initialSlide: 0, // Начинаем с первого слайда (было 1)
+        appendArrows: $('.stories .container'),
+        prevArrow: `
+          <button class="slick-arrow slick-prev" aria-label="Previous">
+            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="45" height="45" rx="22.5" stroke="#131314"/>
+            <path d="M26 31L18 23L26 15" stroke="#131314" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        `,
+        nextArrow: `
+          <button class="slick-arrow slick-next" aria-label="Next">
+            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="-0.5" y="0.5" width="45" height="45" rx="22.5" transform="matrix(-1 0 0 1 45 0)" stroke="#131314"/>
+            <path d="M20 31L28 23L20 15" stroke="#131314" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        `,
+        autoplay: false,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        centerMode: false, // Отключаем centerMode (было true)
+        centerPadding: '0', // Убираем отступы по краям
+        responsive: [
+          
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: false,
+              centerMode: false,
+              arrows: false,
+            }
+          }
+        ]
+      });
+
+      
+
+
+
 
 
 

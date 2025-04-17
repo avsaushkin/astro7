@@ -219,17 +219,20 @@ h2 {
 .step-text {
     display: block;
     color: #A8ADB4;
+    text-align: left;
 }
 
-.consultation-cards {
+.story-cards {
+    height: 100%;
+}
+
+.consultation-cards, .story-cards, .tarot-cards {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
     gap: 20px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
     overflow: hidden;
     padding-bottom: 72px;
     width: 100%;
@@ -299,19 +302,6 @@ h2 {
     opacity: 1;
     width: 32px;
     border-radius: 10px;
-}
-
-.tarot-cards {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    white-space: nowrap;
-    gap: 20px;
-    overflow: hidden;
-    padding-bottom: 72px;
-    width: 100%;
-    overflow: hidden;    
 }
 
 .tarot-card {
@@ -542,16 +532,77 @@ h2 {
     bottom: -45px;
 }
 
+.story-card {
+    max-width: 470px;
+    width: 100%;
+    white-space: normal;
+    position: relative;
+    display: flex;
+}
+
+.story-card .client-info {
+    border: 1px solid #CED1D5;
+    border-radius: 20px 20px 0 0;
+    height: auto;
+}
+
+.story-card .expert-response {
+    border: 1px solid #CED1D5;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    height: fit-content;
+    display: block;
+}
+
+p.responce-content {
+    color: #131314;
+}
+
+.hero-dark .center {
+    text-align: center;
+}
+
+.hero-dark .step {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-dark .btn {
+   width: 343px;
+}
+
+.legal {
+    padding: 40px 0 24px;
+    margin: 60px 0 40px;
+    border-top: 1px solid #CED1D5;
+    border-bottom: 1px solid #CED1D5;
+}
+
+.legal p, .copy p {
+    font-weight: 15px;
+    color: #A8ADB4;
+    letter-spacing: -0.02em;
+}
+
+.legal p+p {
+    margin-top: 16px;
+}
+
+.copy {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
 
 
 
 
 
 
-
-
-  
- 
 
 
 
