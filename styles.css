@@ -609,6 +609,29 @@ p.responce-content {
     color: inherit;
 }
 
+.online-consult {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-radius: 30px;
+    background-color: #E23065;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.online-consult p {
+    max-width: 335px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.online-consult a {
+    margin-top: 0;
+    color: #E23065;
+}
+
 
 
 
@@ -704,4 +727,25 @@ only screen and (min-resolution: 192dpi) {
     .advantages {
         display: flex;
     }
+
+    .online-consult img {
+        order: -1;
+        width: 52px;
+        height: 52px;
+        flex-basis: 100%;
+    }
+
+    .online-consult {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .online-consult p {
+        font-size: 16px;
+    }
+
+    .online-consult p {
+        text-align: center;
+    }
+    
 }
